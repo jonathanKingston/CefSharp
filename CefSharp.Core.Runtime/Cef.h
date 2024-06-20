@@ -17,6 +17,7 @@
 #include <include/cef_crash_util.h>
 #include <include/cef_parser.h>
 #include <include/cef_task.h>
+#include <include/cef_sandbox_win.h>
 #include <include/internal/cef_types.h>
 
 #include "Internals/CefSharpApp.h"
@@ -30,6 +31,14 @@ using namespace System::Collections::Generic;
 using namespace System::Linq;
 using namespace System::Reflection;
 using namespace msclr::interop;
+
+#define CEF_USE_SANDBOX true
+
+//void* sandboxInfo = nullptr;
+#if defined(CEF_USE_SANDBOX)
+CefScopedSandboxInfo scopedSandbox;
+void* sandboxInfo = scopedSandbox.sandbox_info();
+#endif
 
 namespace CefSharp
 {
@@ -314,7 +323,7 @@ namespace CefSharp
                 CefMainArgs main_args;
                 CefSettings settings = *(cefSettings->_cefSettings);
 
-                auto success = CefInitialize(main_args, settings, app.get(), nullptr);
+                auto success = CefInitialize(main_args, settings, app.get(), sandboxInfo);
 
                 if (!success)
                 {
@@ -390,7 +399,7 @@ namespace CefSharp
                 //TODO: Look at ways to expose an instance of CefApp
                 //CefRefPtr<CefSharpApp> app(new CefSharpApp(nullptr, nullptr));
 
-                return CefExecuteProcess(cefMainArgs, nullptr, nullptr);
+                return CefExecuteProcess(cefMainArgs, nullptr, sandboxInfo);
             }
 
             /// <summary>Add an entry to the cross-origin whitelist.</summary>

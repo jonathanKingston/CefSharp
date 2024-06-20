@@ -19,7 +19,7 @@ BEGIN
         BEGIN
             VALUE "FileDescription", "CefSharp.BrowserSubprocess.Core"
             VALUE "FileVersion", "125.0.210"
-            VALUE "LegalCopyright", "Copyright © 2023 The CefSharp Authors"
+            VALUE "LegalCopyright", "Copyright © 2024 The CefSharp Authors"
             VALUE "ProductName", "CefSharp"
             VALUE "ProductVersion", "125.0.210"
         END
