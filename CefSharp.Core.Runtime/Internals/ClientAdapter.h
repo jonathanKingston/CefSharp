@@ -180,9 +180,11 @@ namespace CefSharp
             virtual DECL void OnDialogClosed(CefRefPtr<CefBrowser> browser) override;
 
             // CefDialogHandler
+            /* TODO method doesn't exist?
             virtual DECL bool OnFileDialog(CefRefPtr<CefBrowser> browser, FileDialogMode mode, const CefString& title,
                 const CefString& default_file_path, const std::vector<CefString>& accept_filters,
                 CefRefPtr<CefFileDialogCallback> callback) override;
+            */
 
             //CefDragHandler
             virtual DECL bool OnDragEnter(CefRefPtr<CefBrowser> browser, CefRefPtr<CefDragData> dragData, DragOperationsMask mask) override;

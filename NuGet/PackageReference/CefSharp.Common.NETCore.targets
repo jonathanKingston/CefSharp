@@ -143,16 +143,16 @@
       <Choose>
         <When Condition="'$(ManagePackageVersionsCentrally)' == 'true'">
           <ItemGroup>
-			<PackageReference Include="chromiumembeddedframework.runtime.win-x64" VersionOverride="126.2.4" />
-			<PackageReference Include="chromiumembeddedframework.runtime.win-x86" VersionOverride="126.2.4" />
-			<PackageReference Include="chromiumembeddedframework.runtime.win-arm64" VersionOverride="126.2.4" />
+			<PackageReference Include="chromiumembeddedframework.runtime.win-x64" VersionOverride="126.2.9" />
+			<PackageReference Include="chromiumembeddedframework.runtime.win-x86" VersionOverride="126.2.9" />
+			<PackageReference Include="chromiumembeddedframework.runtime.win-arm64" VersionOverride="126.2.9" />
           </ItemGroup>
         </When>
         <Otherwise>
           <ItemGroup>
-            <PackageReference Include="chromiumembeddedframework.runtime.win-x64" Version="126.2.4" />
-			<PackageReference Include="chromiumembeddedframework.runtime.win-x86" Version="126.2.4" />
-			<PackageReference Include="chromiumembeddedframework.runtime.win-arm64" Version="126.2.4" />
+            <PackageReference Include="chromiumembeddedframework.runtime.win-x64" Version="126.2.9" />
+			<PackageReference Include="chromiumembeddedframework.runtime.win-x86" Version="126.2.9" />
+			<PackageReference Include="chromiumembeddedframework.runtime.win-arm64" Version="126.2.9" />
           </ItemGroup>
         </Otherwise>
       </Choose>
@@ -208,7 +208,6 @@
           <Visible>false</Visible>
           <IncludeInVsix>true</IncludeInVsix>
         </Content>
-        <!---
         <Content Include="$(MSBuildThisFileDirectory)..\runtimes\win-arm64\lib\netcoreapp3.1\CefSharp.dll">
           <Link>runtimes\win-arm64\native\%(RecursiveDir)%(FileName)%(Extension)</Link>
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -223,7 +222,6 @@
           <Visible>false</Visible>
           <IncludeInVsix>true</IncludeInVsix>
         </Content>
-        -->
       </ItemGroup>
     </Otherwise>
   </Choose>

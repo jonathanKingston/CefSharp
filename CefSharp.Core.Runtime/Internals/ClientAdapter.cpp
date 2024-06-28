@@ -957,7 +957,7 @@ namespace CefSharp
                 handler->OnDialogClosed(_browserControl, browserWrapper);
             }
         }
-
+/*
         bool ClientAdapter::OnFileDialog(CefRefPtr<CefBrowser> browser, FileDialogMode mode, const CefString& title,
             const CefString& default_file_path, const std::vector<CefString>& accept_filters,
             CefRefPtr<CefFileDialogCallback> callback)
@@ -981,7 +981,7 @@ namespace CefSharp
                 StringUtils::ToClr(accept_filters),
                 callbackWrapper);
         }
-
+*/
         bool ClientAdapter::OnDragEnter(CefRefPtr<CefBrowser> browser, CefRefPtr<CefDragData> dragData, DragOperationsMask mask)
         {
             auto handler = _browserControl->DragHandler;

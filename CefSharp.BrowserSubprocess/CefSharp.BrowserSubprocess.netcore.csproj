@@ -53,6 +53,9 @@
       <Compile Remove="Program.cs" />
     </ItemGroup>
     <ItemGroup>
+      <PackageReference Include="chromiumembeddedframework.runtime" Version="126.2.9" />
+    </ItemGroup>
+    <ItemGroup>
         <ProjectReference Include="..\CefSharp.BrowserSubprocess.Core\CefSharp.BrowserSubprocess.Core.netcore.vcxproj" />
         <ProjectReference Include="..\CefSharp\CefSharp.netcore.csproj" />
     </ItemGroup>
